@@ -50,7 +50,7 @@
       <g transform="translate(260, 0)">
         <rect x="0" y="0" width="120" height="46" rx="8" fill="url(#cardGrad)" stroke="#30363d" stroke-width="1" />
         <text x="12" y="18" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">CURRENT</text>
-        <text x="12" y="37" fill="#f0f6fc" font-size="16" font-weight="700" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">0 days</text>
+        <text x="12" y="37" fill="#f0f6fc" font-size="16" font-weight="700" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">1 day</text>
       </g>
     </g>
   </g>
@@ -1924,11 +1924,6 @@
       <path d="M 909.6 642.8784 L 925.6 652.1184000000001 L 925.6 654.1184000000001 L 909.6 644.8784 Z" fill="#0e131a" />
       <path d="M 925.6 652.1184000000001 L 941.6 642.8784 L 941.6 644.8784 L 925.6 654.1184000000001 Z" fill="#080b0f" />
       <path d="M 925.6 633.6384 L 941.6 642.8784 L 925.6 652.1184000000001 L 909.6 642.8784 Z" fill="#161b22" stroke="#21262d" stroke-width="0.5" />
-    </g>
-    <g class="cube" data-date="2026-10-10" data-count="0">
-      <path d="M 900.32 652.1184000000001 L 916.32 661.3584000000001 L 916.32 663.3584000000001 L 900.32 654.1184000000001 Z" fill="#0e131a" />
-      <path d="M 916.32 661.3584000000001 L 932.32 652.1184000000001 L 932.32 654.1184000000001 L 916.32 663.3584000000001 Z" fill="#080b0f" />
-      <path d="M 916.32 642.8784 L 932.32 652.1184000000001 L 916.32 661.3584000000001 L 900.32 652.1184000000001 Z" fill="#161b22" stroke="#21262d" stroke-width="0.5" />
     </g>
   </g>
 

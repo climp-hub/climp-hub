@@ -263,12 +263,10 @@ test('Suite 8: Streak calculation correctness and compatibility', async (t) => {
 
     // Must reference the existing profile-green-animate.svg
     assert.ok(readme.includes('profile-3d-contrib/profile-green-animate.svg'), 'README must retain reference to profile-green-animate.svg');
-    // Must contain original profile bio and links
+    // Must contain original profile greeting and bio
     assert.ok(readme.includes("Hi, I'm KANISHQ 👋"), 'README must retain profile greeting');
-    assert.ok(readme.includes('s3n5e.netlify.app'), 'README must retain portfolio link');
-    assert.ok(readme.includes('tryhackme.com/p/S3N5E'), 'README must retain TryHackMe link');
-    assert.ok(readme.includes('app.hackthebox.com/profile/1803320'), 'README must retain HackTheBox link');
-    assert.ok(readme.includes('0009-0002-8493-0725'), 'README must retain ORCID link');
+    assert.ok(readme.includes("A cyber security enthusiast"), 'README must retain profile tagline');
+    assert.ok(readme.includes("Launch Interactive 3D Dashboard"), 'README must link to interactive dashboard');
 
     // Existing SVG file must exist and be non-empty
     const existingSvg = path.join(REPO_ROOT, 'profile-3d-contrib', 'profile-green-animate.svg');

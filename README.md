@@ -5,7 +5,7 @@
 
 ### 📊 3D Contribution Calendar
 <p align="center">
-  <img src="profile-3d-contrib/profile-green-animate.svg" alt="3D Contribution Graph" width="100%">
+  <img src="profile-3d-contrib/profile-isometric-contrib.svg" alt="Isometric 3D GitHub contribution calendar" width="100%">
 </p>
 
 ---

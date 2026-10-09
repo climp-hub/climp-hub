@@ -1,0 +1,26 @@
+{
+  "name": "climp-hub-3d-contrib",
+  "version": "1.0.0",
+  "description": "Interactive 3D GitHub Contribution Experience and Isometric Calendar for climp-hub",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/calendar.test.mjs",
+    "fetch-data": "node scripts/fetch-contributions.mjs",
+    "generate-svg": "node scripts/generate-dark-svg.mjs",
+    "build": "node scripts/generate-dark-svg.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "keywords": [
+    "github",
+    "contributions",
+    "3d",
+    "threejs",
+    "isometric",
+    "calendar"
+  ],
+  "author": "KANISHQ (climp-hub)",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.180.0"
+  }
+}

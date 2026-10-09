@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>climp-hub | Interactive 3D GitHub Contribution Experience</title>
+  <meta name="description" content="Explore climp-hub's GitHub contribution history rendered in an interactive 3D voxel calendar.">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./vendor/three.module.js",
+      "three/addons/": "./vendor/addons/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Profile Header Banner -->
+    <header class="profile-banner">
+      <div class="profile-main">
+        <div class="avatar-badge" aria-label="Profile Avatar">🕵️‍♂️</div>
+        <div class="profile-info">
+          <h1>Hi, I'm KANISHQ 👋</h1>
+          <p>A cyber security enthusiast and digital detective, unraveling the web’s secrets.</p>
+        </div>
+      </div>
+      <div class="profile-links">
+        <a class="badge-link" href="https://s3n5e.netlify.app" target="_blank" rel="noopener noreferrer">🌐 Portfolio</a>
+        <a class="badge-link" href="https://tryhackme.com/p/S3N5E" target="_blank" rel="noopener noreferrer">🛡️ TryHackMe</a>
+        <a class="badge-link" href="https://app.hackthebox.com/profile/1803320" target="_blank" rel="noopener noreferrer">🎯 HackTheBox</a>
+        <a class="badge-link" href="https://www.linkedin.com/in/kanishq-290154214/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
+        <a class="badge-link" href="https://x.com/kanishq5054" target="_blank" rel="noopener noreferrer">🐦 X (Twitter)</a>
+        <a class="badge-link" href="https://orcid.org/0009-0002-8493-0725" target="_blank" rel="noopener noreferrer">🔬 ORCID</a>
+      </div>
+    </header>
+
+    <!-- Controls Bar -->
+    <div class="dashboard-controls">
+      <div class="controls-left">
+        <div class="control-group">
+          <label for="year-select" class="control-label">Period:</label>
+          <select id="year-select" class="select-input" aria-label="Select contribution period">
+            <option value="lastYear">Last Year (Trailing 365 Days)</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+          </select>
+        </div>
+
+        <button id="btn-view-toggle" class="btn" type="button" aria-label="Toggle between 3D canvas and accessible 2D view">
+          <span>📊 2D Accessible Grid</span>
+        </button>
+      </div>
+
+      <div class="controls-right">
+        <div id="source-badge" class="badge badge-verified">✓ Verified Public API Dataset</div>
+        <button id="owner-btn" class="btn btn-owner" type="button">
+          <span>🔐 Authenticate (Owner Mode)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Alert / Fallback Banners -->
+    <div id="webgl-warning" class="alert-banner alert-warning hidden" role="alert">
+      <span>⚠️ WebGL is not available on this device. Displaying accessible 2D contribution calendar fallback.</span>
+    </div>
+    <div id="error-banner" class="alert-banner alert-error hidden" role="alert"></div>
+
+    <!-- KPI Statistics Grid -->
+    <section class="stats-grid" aria-label="Contribution Statistics">
+      <div class="stat-card">
+        <span class="stat-title">Total Contributions</span>
+        <span id="stat-total" class="stat-value highlight">--</span>
+        <span class="stat-subtext">Verified period sum</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Public Activity</span>
+        <span id="stat-public" class="stat-value">--</span>
+        <span class="stat-subtext">Public repositories</span>
+      </div>
+      <div class="stat-card locked" title="Private contributions require owner authorization">
+        <span class="stat-title">Private Activity</span>
+        <span id="stat-private" class="stat-value">Locked</span>
+        <span class="stat-subtext">Restricted contributions</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Longest Streak</span>
+        <span id="stat-longest" class="stat-value">--</span>
+        <span class="stat-subtext">Consecutive active days</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Current Streak</span>
+        <span id="stat-current" class="stat-value">--</span>
+        <span class="stat-subtext">Up to present</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-title">Active Days</span>
+        <span id="stat-active" class="stat-value">--</span>
+        <span class="stat-subtext">Days with ≥ 1 contribution</span>
+      </div>
+    </section>
+
+    <!-- 3D / 2D Visualization Stage -->
+    <main class="stage-container" aria-label="Interactive Contribution Visualization">
+      <div class="canvas-toolbar">
+        <button id="btn-reset-cam" class="btn" type="button" title="Reset Camera View">🔄 Reset</button>
+        <button id="btn-rotate" class="btn" type="button" title="Toggle Auto Rotation">▶ Rotate</button>
+        <button id="btn-zoom-in" class="btn" type="button" title="Zoom In">🔍+</button>
+        <button id="btn-zoom-out" class="btn" type="button" title="Zoom Out">🔍-</button>
+        <button id="btn-topdown" class="btn" type="button" title="Top-down Ortho View">📐 Top View</button>
+      </div>
+
+      <div id="loading-indicator" class="loading-overlay hidden">
+        <div class="spinner"></div>
+        <span>Loading contribution data...</span>
+      </div>
+
+      <div id="canvas-container" role="application" aria-label="3D Voxel Contribution Calendar. Use mouse or touch to rotate and zoom."></div>
+      <div id="fallback-container" class="hidden" role="region" aria-label="Accessible Contribution Calendar Grid"></div>
+
+      <footer class="stage-footer">
+        <div>
+          <span>Controls: <strong>Drag</strong> to rotate • <strong>Right-click Drag</strong> to pan • <strong>Scroll</strong> to zoom • <strong>Hover</strong> cubes for details</span>
+        </div>
+        <div class="legend-container" aria-label="Contribution Activity Legend">
+          <span>Less</span>
+          <span class="legend-swatch level-0" title="Level 0 (0 contributions)"></span>
+          <span class="legend-swatch level-1" title="Level 1 (1-3 contributions)"></span>
+          <span class="legend-swatch level-2" title="Level 2 (4-6 contributions)"></span>
+          <span class="legend-swatch level-3" title="Level 3 (7-9 contributions)"></span>
+          <span class="legend-swatch level-4" title="Level 4 (10+ contributions)"></span>
+          <span>More</span>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Floating Hover Tooltip -->
+  <div id="cube-tooltip" class="floating-tooltip hidden" role="tooltip" aria-hidden="true"></div>
+
+  <!-- Owner Authentication Modal -->
+  <div id="owner-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2 id="modal-title">🔐 Owner Mode Authentication</h2>
+        <button id="modal-close-btn" class="modal-close" type="button" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Unlock authenticated private contributions and restricted stats for <strong>@climp-hub</strong>.</p>
+        <div class="privacy-notice">
+          <strong>🔒 Zero-Persistence Security:</strong> Your Personal Access Token is held purely in runtime memory for this browser session. It is never logged, stored in cookies or localStorage, or sent anywhere other than directly to <code>https://api.github.com/graphql</code>.
+        </div>
+        <label for="token-input" style="display:block; margin-bottom:6px; font-weight:600;">GitHub Personal Access Token (PAT):</label>
+        <input id="token-input" class="form-input" type="password" placeholder="ghp_... or github_pat_..." autocomplete="off">
+        <div id="modal-error" class="modal-error"></div>
+        <p style="font-size:11px; color:var(--text-muted); margin-bottom:0;">
+          Required token scope: <code>read:user</code> (or fine-grained token with user profile read permission).
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" type="button" onclick="document.getElementById('modal-close-btn').click()">Cancel</button>
+        <button id="token-submit-btn" class="btn btn-owner" type="button">Authorize & Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
+

@@ -14,18 +14,43 @@ jobs:
     name: generate-github-profile-3d-contrib
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Generate 3D contribution graph
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch Verified Contribution Data
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: climp-hub
+        run: |
+          node scripts/fetch-contributions.mjs
+
+      - name: Generate Dark 3D Isometric SVG
+        run: |
+          node scripts/generate-dark-svg.mjs
+
+      - name: Generate Legacy 3D Contribution Graphs
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: climp-hub
 
+      - name: Run Test Suite
+        run: |
+          npm test
+
       - name: Commit & Push changes
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A .
-          git commit -m "chore: update 3d contribution graph [skip ci]" || exit 0
-          git push
+          git status --porcelain
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A .
+            git commit -m "chore: update 3d contribution graph and data [skip ci]"
+            git push
+          else
+            echo "No changes detected, skipping commit."
+          fi

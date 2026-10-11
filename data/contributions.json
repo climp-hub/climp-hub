@@ -1,6 +1,6 @@
 {
   "username": "climp-hub",
-  "fetchedAt": "2026-10-10T20:59:36.803Z",
+  "fetchedAt": "2026-10-11T21:21:04.265Z",
   "availableYears": [
     2026,
     2025,
@@ -17090,7 +17090,7 @@
         {
           "name": "Oct",
           "firstDay": "2025-10-01",
-          "totalWeeks": 4
+          "totalWeeks": 3
         },
         {
           "name": "Nov",
@@ -17150,63 +17150,10 @@
         {
           "name": "Oct",
           "firstDay": "2026-10-01",
-          "totalWeeks": 1
+          "totalWeeks": 2
         }
       ],
       "weeks": [
-        {
-          "contributionDays": [
-            {
-              "date": "2025-10-05",
-              "contributionCount": 0,
-              "weekday": 0,
-              "intensity": 0,
-              "color": "#ebedf0"
-            },
-            {
-              "date": "2025-10-06",
-              "contributionCount": 0,
-              "weekday": 1,
-              "intensity": 0,
-              "color": "#ebedf0"
-            },
-            {
-              "date": "2025-10-07",
-              "contributionCount": 0,
-              "weekday": 2,
-              "intensity": 0,
-              "color": "#ebedf0"
-            },
-            {
-              "date": "2025-10-08",
-              "contributionCount": 0,
-              "weekday": 3,
-              "intensity": 0,
-              "color": "#ebedf0"
-            },
-            {
-              "date": "2025-10-09",
-              "contributionCount": 0,
-              "weekday": 4,
-              "intensity": 0,
-              "color": "#ebedf0"
-            },
-            {
-              "date": "2025-10-10",
-              "contributionCount": 0,
-              "weekday": 5,
-              "intensity": 0,
-              "color": "#ebedf0"
-            },
-            {
-              "date": "2025-10-11",
-              "contributionCount": 0,
-              "weekday": 6,
-              "intensity": 0,
-              "color": "#ebedf0"
-            }
-          ]
-        },
         {
           "contributionDays": [
             {
@@ -19960,6 +19907,17 @@
               "weekday": 6,
               "intensity": 1,
               "color": "#216e39"
+            }
+          ]
+        },
+        {
+          "contributionDays": [
+            {
+              "date": "2026-10-11",
+              "contributionCount": 0,
+              "weekday": 0,
+              "intensity": 0,
+              "color": "#ebedf0"
             }
           ]
         }

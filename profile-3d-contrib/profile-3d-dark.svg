@@ -50,7 +50,7 @@
       <g transform="translate(260, 0)">
         <rect x="0" y="0" width="120" height="46" rx="8" fill="url(#cardGrad)" stroke="#30363d" stroke-width="1" />
         <text x="12" y="18" fill="#8b949e" font-size="11" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">CURRENT</text>
-        <text x="12" y="37" fill="#f0f6fc" font-size="16" font-weight="700" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">1 day</text>
+        <text x="12" y="37" fill="#f0f6fc" font-size="16" font-weight="700" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">0 days</text>
       </g>
     </g>
   </g>
@@ -1850,6 +1850,11 @@
       <path d="M 937.44 619.0391999999999 L 953.44 609.7991999999999 L 953.44 611.7991999999999 L 937.44 621.0391999999999 Z" fill="#080b0f" />
       <path d="M 937.44 600.5591999999999 L 953.44 609.7991999999999 L 937.44 619.0391999999999 L 921.44 609.7991999999999 Z" fill="#161b22" stroke="#21262d" stroke-width="0.5" />
     </g>
+    <g class="cube" data-date="2026-10-12" data-count="0">
+      <path d="M 946.72 605.9184 L 962.72 615.1584 L 962.72 617.1584 L 946.72 607.9184 Z" fill="#0e131a" />
+      <path d="M 962.72 615.1584 L 978.72 605.9184 L 978.72 607.9184 L 962.72 617.1584 Z" fill="#080b0f" />
+      <path d="M 962.72 596.6784 L 978.72 605.9184 L 962.72 615.1584 L 946.72 605.9184 Z" fill="#161b22" stroke="#21262d" stroke-width="0.5" />
+    </g>
     <g class="cube" data-date="2026-09-19" data-count="0">
       <path d="M 836.32 630.6815999999999 L 852.32 639.9215999999999 L 852.32 641.9215999999999 L 836.32 632.6815999999999 Z" fill="#0e131a" />
       <path d="M 852.32 639.9215999999999 L 868.32 630.6815999999999 L 868.32 632.6815999999999 L 852.32 641.9215999999999 Z" fill="#080b0f" />
@@ -1869,6 +1874,11 @@
       <path d="M 912.16 619.0391999999999 L 928.16 628.2792 L 928.16 630.2792 L 912.16 621.0391999999999 Z" fill="#0e131a" />
       <path d="M 928.16 628.2792 L 944.16 619.0391999999999 L 944.16 621.0391999999999 L 928.16 630.2792 Z" fill="#080b0f" />
       <path d="M 928.16 609.7991999999999 L 944.16 619.0391999999999 L 928.16 628.2792 L 912.16 619.0391999999999 Z" fill="#161b22" stroke="#21262d" stroke-width="0.5" />
+    </g>
+    <g class="cube" data-date="2026-10-13" data-count="0">
+      <path d="M 937.44 615.1584 L 953.44 624.3984 L 953.44 626.3984 L 937.44 617.1584 Z" fill="#0e131a" />
+      <path d="M 953.44 624.3984 L 969.44 615.1584 L 969.44 617.1584 L 953.44 626.3984 Z" fill="#080b0f" />
+      <path d="M 953.44 605.9184 L 969.44 615.1584 L 953.44 624.3984 L 937.44 615.1584 Z" fill="#161b22" stroke="#21262d" stroke-width="0.5" />
     </g>
     <g class="cube" data-date="2026-09-26" data-count="0">
       <path d="M 852.32 636.0408 L 868.32 645.2808 L 868.32 647.2808 L 852.32 638.0408 Z" fill="#0e131a" />

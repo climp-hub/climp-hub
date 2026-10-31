@@ -1,6 +1,6 @@
 {
   "username": "climp-hub",
-  "fetchedAt": "2026-10-30T21:51:37.966Z",
+  "fetchedAt": "2026-10-31T20:52:38.298Z",
   "availableYears": [
     2026,
     2025,
@@ -1336,7 +1336,7 @@
               "contributionCount": 2,
               "weekday": 2,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             },
             {
               "date": "2021-06-16",
@@ -3915,7 +3915,7 @@
               "contributionCount": 1,
               "weekday": 3,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             },
             {
               "date": "2022-05-12",
@@ -5049,7 +5049,7 @@
               "contributionCount": 1,
               "weekday": 6,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             }
           ]
         },
@@ -5180,7 +5180,7 @@
               "contributionCount": 1,
               "weekday": 2,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             },
             {
               "date": "2022-10-26",
@@ -5226,7 +5226,7 @@
               "contributionCount": 5,
               "weekday": 1,
               "intensity": 2,
-              "color": "#216e39"
+              "color": "#03001c"
             },
             {
               "date": "2022-11-01",
@@ -5473,7 +5473,7 @@
               "contributionCount": 1,
               "weekday": 6,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             }
           ]
         },
@@ -7165,7 +7165,7 @@
               "contributionCount": 1,
               "weekday": 2,
               "intensity": 1,
-              "color": "#40c463"
+              "color": "#ffc501"
             },
             {
               "date": "2023-07-05",
@@ -8458,7 +8458,7 @@
               "contributionCount": 2,
               "weekday": 5,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             },
             {
               "date": "2023-12-23",
@@ -8758,7 +8758,7 @@
               "contributionCount": 2,
               "weekday": 6,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             }
           ]
         },
@@ -11320,7 +11320,7 @@
               "contributionCount": 1,
               "weekday": 1,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             },
             {
               "date": "2024-12-24",
@@ -16432,7 +16432,7 @@
               "contributionCount": 1,
               "weekday": 4,
               "intensity": 1,
-              "color": "#40c463"
+              "color": "#ffc501"
             },
             {
               "date": "2026-10-09",
@@ -16446,7 +16446,7 @@
               "contributionCount": 2,
               "weekday": 6,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             }
           ]
         },
@@ -19786,7 +19786,7 @@
               "contributionCount": 1,
               "weekday": 4,
               "intensity": 1,
-              "color": "#40c463"
+              "color": "#ffc501"
             },
             {
               "date": "2026-10-09",
@@ -19800,7 +19800,7 @@
               "contributionCount": 2,
               "weekday": 6,
               "intensity": 1,
-              "color": "#216e39"
+              "color": "#03001c"
             }
           ]
         },
@@ -19951,6 +19951,13 @@
               "date": "2026-10-30",
               "contributionCount": 0,
               "weekday": 5,
+              "intensity": 0,
+              "color": "#ebedf0"
+            },
+            {
+              "date": "2026-10-31",
+              "contributionCount": 0,
+              "weekday": 6,
               "intensity": 0,
               "color": "#ebedf0"
             }
